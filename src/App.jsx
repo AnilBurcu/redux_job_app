@@ -10,13 +10,17 @@ import { useDispatch } from "react-redux";
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const getJobs = () => {
     dispatch(setLoading());
 
     api
-      .get("/jobs")
+      .get("/jobs1234")
       .then((res) => dispatch(setJobs(res.data)))
       .catch((err) => dispatch(setError(err.message)));
+  };
+
+  useEffect(() => {
+    getJobs();
   }, []);
 
   return (
@@ -24,7 +28,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<JobList />} />
+          <Route path="/" element={<JobList retry={getJobs} />} />
           <Route path="/new" element={<AddJob />} />
         </Routes>
       </BrowserRouter>

@@ -1,15 +1,16 @@
 import { useSelector } from "react-redux";
-import Loader from "../components/Loader";
+import Loader from "./../components/Loader";
+import Error from "./../components/Error";
 
-const JobList = () => {
+const JobList = ({ retry }) => {
   const { jobs, error, isLoading } = useSelector((store) => store);
 
   return (
-    <div className="">
+    <div className="list-page">
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Error />
+        <Error retry={retry} message={error} />
       ) : (
         <div className="cards-wrapper">
           {jobs.map((i) => (
