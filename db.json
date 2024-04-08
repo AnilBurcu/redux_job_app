@@ -53,6 +53,15 @@
       "status": "Reddedildi",
       "type": "Uzaktan",
       "date": "3/28/2023"
+    },
+    {
+      "id": "223af309-600e-4bcf-8c6d-89d2ee16d892",
+      "position": "frontend developer",
+      "company": "apple",
+      "location": "abd",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": "08/04/2024"
     }
   ]
 }
