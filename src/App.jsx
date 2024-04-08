@@ -14,7 +14,7 @@ const App = () => {
     dispatch(setLoading());
 
     api
-      .get("/jobs1234")
+      .get("/jobs")
       .then((res) => dispatch(setJobs(res.data)))
       .catch((err) => dispatch(setError(err.message)));
   };
